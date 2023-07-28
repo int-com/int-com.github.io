@@ -299,7 +299,7 @@
         margin-bottom: 30px;
     }
     .gallery_text {
-        height: 264px;
+        height: max-content;
         margin-bottom: 30px;
     }
     .titlepage h2 {
