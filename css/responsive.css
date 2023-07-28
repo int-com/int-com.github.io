@@ -114,7 +114,7 @@
         font-size: 18px;
     }
     .gallery_text {
-        height: 233px;
+        height: max-content;
     }
     #design a.carousel-control-next {
         right: 25%;
