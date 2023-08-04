@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizador de PDF</title>
+    <script src="js/cdnjs.cloudflare.com_ajax_libs_pdf.js_2.7.570_pdf.min.js"></script>
+</head>
+<body>
+    <canvas id="pdf-canvas"></canvas>
+    <script>
+        var url = 'images/proyecto270.pdf';
+        pdfjsLib.getDocument(url).promise.then(function(pdf) {
+            pdf.getPage(1).then(function(page) {
+                var canvas = document.getElementById('pdf-canvas');
+                var context = canvas.getContext('2d');
+                var viewport = page.getViewport({scale: 1});
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                page.render({canvasContext: context, viewport: viewport});
+            });
+        });
+    </script>
+</body>
+</html>
